@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Namma Kudla - Discover Mangalore's Hidden Gems</title>
+
+  <!-- Google icons & Chart.js CDN -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="#" data-page="home">
+        
+        Namma Kudla
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" data-page="home">Home</a></li>
+        <li><a href="#" data-page="blog">Blog</a></li>
+        <li><a href="#" data-page="destinations">Destinations</a></li>
+        <li><a href="#" data-page="guides">Guides</a></li>
+        <li><a href="#" data-page="about">About</a></li>
+        <li><a href="#" data-page="contact">Contact</a></li>
+        <li><a href="#" data-page="dashboard">Dashboard</a></li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌓</button>
+        </li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <main>
+    <section id="homePage" class="page-section active">
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>Welcome to Namma Kudla</h1>
+          <p>Discover Mangalore — coastal charm, culture, and unforgettable food. Explore featured posts, popular destinations and travel tips from local experts.</p>
+          <div class="hero-cta">
+            <button class="cta-button" data-page="destinations">Explore Destinations</button>
+            <button class="cta-button ghost" data-page="blog">Read Blog</button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- hero image - replace with your file if you have a banner -->
+          <img src="panamb-beach.jpg" alt="Panambur Beach" onerror="this.style.display='none'"/>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Travel Stories</h2>
+          <p>Handpicked adventures from our travel community</p>
+        </div>
+
+        <div class="masonry-grid" id="featuredPosts">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="section-header">
+          <h2>Popular Destinations</h2>
+        </div>
+        <div class="destinations-grid" id="destinationsGrid">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="newsletter">
+          <h2>Stay Updated</h2>
+          <p>Subscribe for the latest tips, guides and exclusive content.</p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input id="newsletterEmail" type="email" class="newsletter-input" placeholder="Enter your email" required />
+            <button class="newsletter-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blogPage" class="page-section">
+      <div class="hero-banner small">
+        <div class="hero-content">
+          <h1>Travel Blog</h1>
+          <p>Real stories from real travelers exploring Kudla</p>
+        </div>
+      </div>
+
+      <div class="search-section">
+        <div class="search-container">
+          <input id="searchInput" class="search-input" type="text" placeholder="Search posts..." />
+          <select id="categoryFilter" class="filter-select">
+            <option value="all">All Categories</option>
+            <option value="beaches">Beaches</option>
+            <option value="temples">Temples</option>
+            <option value="cuisine">Cuisine</option>
+            <option value="culture">Culture</option>
+            <option value="adventure">Adventure</option>
+            <option value="hidden-gems">Hidden Gems</option>
+          </select>
+          <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Latest Posts</h2>
+          <p>Inspiring journeys and insider tips from our community</p>
+        </div>
+
+        <div class="blog-layout">
+          <div class="masonry-grid" id="blogGrid">
+            <!-- populated by JS -->
+          </div>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Categories</h3>
+              <ul id="sidebarCategories"></ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Recent Posts</h3>
+              <ul id="sidebarRecent"></ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section id="destinationsPage" class="page-section">
+      <div class="hero-banner small">
+        <div class="hero-content">
+          <h1>Explore Destinations</h1>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Popular Destinations</h2>
+          <p>Must-visit places that capture the essence of Kudla</p>
+        </div>
+
+        <div class="destinations-grid" id="destinationsGridLarge">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="section-header">
+          <h2>Location Map</h2>
+          <p>Navigate through Mangalore's top attractions</p>
+        </div>
+        <div class="map-container">
+          <!-- Google Maps embed centered on Mangalore -->
+          <iframe
+            src="https://www.google.com/maps?q=Mangalore&output=embed"
+            style="border:0; width:100%; height:100%;"
+            allowfullscreen=""
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDES -->
+    <section id="guidesPage" class="page-section">
+      <div class="hero-banner small">
+        <div class="hero-content"><h1>Expert Travel Guides</h1></div>
+      </div>
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Meet Our Guides</h2>
+        </div>
+
+        <div class="guides-grid" id="guidesGrid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="aboutPage" class="page-section">
+      <div class="hero-banner small">
+        <div class="hero-content"><h1>About Namma Kudla</h1></div>
+      </div>
+
+      <div class="container about-kudla">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Discover Mangalore</h2>
+            <p>Mangalore — "Kudla" — blends tradition with coastal beauty, aromatic markets and warm hospitality.</p>
+            <p>We connect travelers to local guides, share real stories and promote sustainable tourism.</p>
+          </div>
+
+          <div class="about-image">
+            <img src="kadri.jpg" alt="Temple" onerror="this.style.display='none'"/>
+             <img src="Pilikula_Main.jpg" alt="Temple" onerror="this.style.display='none'"/>
+              <img src="st-aloysius-chapel.jpg" alt="Temple" onerror="this.style.display='none'"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contactPage" class="page-section">
+      <div class="hero-banner small">
+        <div class="hero-content"><h1>Get in Touch</h1></div>
+      </div>
+
+      <div class="container">
+        <div class="contact-container">
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Fill the form and we'll reply soon.</p>
+          </div>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" required></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Admin Dashboard</h2>
+          <p>Quick overview of site statistics</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="card stat">
+            <h3 id="statUsers">0</h3>
+            <p>Total Users</p>
+          </div>
+          <div class="card stat">
+            <h3 id="statPosts">0</h3>
+            <p>Total Posts</p>
+          </div>
+          <div class="card stat">
+            <h3 id="statComments">0</h3>
+            <p>Total Comments</p>
+          </div>
+          <div class="card chart-card">
+            <canvas id="postsChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Namma Kudla</h3>
+        <p>Your trusted travel companion for exploring Mangalore.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#" data-page="home">Home</a></li>
+          <li><a href="#" data-page="blog">Blog</a></li>
+          <li><a href="#" data-page="destinations">Destinations</a></li>
+          <li><a href="#" data-page="guides">Guides</a></li>
+          <li><a href="#" data-page="about">About</a></li>
+          <li><a href="#" data-page="contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>info@nammakudla.com • +91 824 1234567</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Follow</h3>
+        <div class="social-links">
+          <a href="#" aria-label="facebook">facebook</a>
+          <a href="#" aria-label="instagram">instagram</a>
+          <a href="#" aria-label="youtube">youtube</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Namma Kudla. Made with ♥ in Mangalore</p>
+    </div>
+  </footer>
+
+  <!-- Modal for post detail (simple) -->
+  <div class="modal" id="postModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
