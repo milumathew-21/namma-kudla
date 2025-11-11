@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Data (sample). Replace or expand with your actual content
   const posts = [
     { id:1, title:"Sunset at Panambur", author:"Arun", date:"2024-10-01", category:"beaches", img:"panamb-beach.jpg", excerpt:"Golden sands and water sports." , content:"Full article content about Panambur..." },
-    { id:2, title:"Kudla Temple Walk", author:"Meera", date:"2024-09-20", category:"temples", img:"kadri.jpg", excerpt:"Ancient temples & architecture.", content:"Full article about temples..." },
+    { id:2, title:"Kudla Temple Walk", author:"Meera", date:"2024-09-20", category:"temples", img:"Kadri.jpg", excerpt:"Ancient temples & architecture.", content:"Full article about temples..." },
     
     { id:4, title:"Hidden Gems of Kudla", author:"Anu", date:"2024-07-05", category:"hidden-gems", img:"seafood.jpeg", excerpt:"Less-known spots and tips.", content:"Full article about hidden gems..." }
   ];
 
   const destinations = [
     { id:'d1', name:'Panambur Beach', thumb:'panamb-beach.jpg', description:'Popular beach with events and water sports.'},
-    { id:'d2', name:'Kadri Temple', thumb:'kadri.jpg', description:'Historic temple complex and gardens.'},
+    { id:'d2', name:'Kadri Temple', thumb:'Kadri.jpg', description:'Historic temple complex and gardens.'},
     { id:'d3', name:'Local Cuisine Trail', thumb:'seafood.jpeg', description:'Taste authentic Mangalorean dishes.'}
   ];
 
@@ -326,3 +326,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // initial show
   showPageById('homePage');
 });
+
